@@ -1,0 +1,5 @@
+
+
+
+1集合网关zuul
+2由于之前的springboot版本太高,发现spring-cloud-starter-netflix-zuul 依赖，要把springboot的版本降为2.0.6

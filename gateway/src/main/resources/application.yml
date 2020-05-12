@@ -1,0 +1,24 @@
+server:
+  port: 6666
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        # 匹配指定路径的路由
+        - id: path_route
+          uri: http://www.baidu.com
+          predicates:
+            - Path=/baidu/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  instance:
+    hostname: eureka1.server.com
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://eureka1.server.com:8761/eureka/
+
